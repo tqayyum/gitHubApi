@@ -1,6 +1,6 @@
 const request = require('request-promise');
 
-const HOST = "https://api.github.com/users/tqayyum";
+const HOST = "https://api.github.com";
 
 class Api {
   constructor(host = HOST) {
@@ -16,9 +16,11 @@ class Api {
     });
   }
 
-  getApi() {
+  getApi(username) {
+    const path =  `/users/${username}`
+
     return this.request.get({
-      url: `${this.host}`
+      url: `${this.host}${path}`
     })
   }
 
