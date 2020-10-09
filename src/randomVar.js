@@ -1,14 +1,11 @@
 
-const randomVar = async () => {
-  const obj = {
-    randomName: Math.random().toString(36).slice(2),
-  }
+const randomName = async () => {
+    const name = Math.random().toString(36).slice(2),
 }
-
-module.exports = randomVar
-
-
-
-// randomName: Math.random().toString(36).slice(2),
-//   randomSalary: Math.floor(Math.random() * 100000) + 1,
-//   randomNum: Math.floor(Math.random() * 100) + 1
+const randomSalary = async () => {
+  const salary = Math.random().toString(36).slice(2),
+}
+const randomAge = async () => {
+  const age = Math.random().toString(36).slice(2),
+}
+module.exports = randomName, randomSalary, randomAge

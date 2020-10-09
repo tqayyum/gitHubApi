@@ -1,6 +1,8 @@
 const Api = require('../src/dummy-Api')
 const {expect} = require('chai')
-const randomVar = ('../src/randomVar.js')
+const randomName = ('../src/randomVar')
+const randomSalary = ('../src/randomVar')
+const randomAge = ('../src/randomVar')
 
 describe("Dummy Api employee API", async ()=>{
   let api
@@ -50,11 +52,11 @@ describe("Dummy Api employee API", async ()=>{
     expect(responseGetEmpId).to.have.property('message').to.be.a('string')
   })
 
-  it("Dummy Api Create Employee (POST: /api/v1/create)", async ()=>{
+  it.("Dummy Api Create Employee (POST: /api/v1/create)", async ()=>{
     const empToBeCreated = {
-      "name": `${Math.random().toString(36).slice(2)}`,
-      "salary": `${Math.floor(Math.random() * 100000) + 1}`,
-      "age": `${Math.floor(Math.random() * 100) + 1}`
+      "name": `${randomName}`,
+      "salary": `${randomSalary}`,
+      "age": `${randomAge}`
     }
 
     const createEmpResponse = await api.createEmp(empToBeCreated)
