@@ -1,0 +1,26 @@
+{
+  "name": "githubapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha './**/*.test.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tqayyum/gitHubApi.git"
+  },
+  "author": "Tahir Qayyum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tqayyum/gitHubApi/issues"
+  },
+  "homepage": "https://github.com/tqayyum/gitHubApi#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.1.3",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
