@@ -4,21 +4,17 @@ const randomVar = ('../src/randomVar.js')
 
 describe("Dummy Api employee API", async ()=>{
   let api
-  // created a random string
-  // const randomName = Math.random().toString(36).slice(2)
-  // const randomSalary = Math.floor(Math.random() * 100000) + 1
-  // const randomNum = Math.floor(Math.random() * 100) + 1
 
   before(async()=>{
     api = new Api()
   })
 
-  it("Get Employee List (Get: /api/v1/employees )", async ()=>{
+  it.skip("Dummy Api Get Employee List (Get: /api/v1/employees )", async ()=>{
     const response = await api.getEmpList()
     console.log(response)
   })
 
-  it("Get Employee By Id (Get: /api/v1/employees/{empId} )", async () => {
+  it("Dummy Api Get Employee By Id (Get: /api/v1/employees/{empId} )", async () => {
 
     const responseGetEmpId = await api.getEmpById(2)
 
@@ -67,7 +63,7 @@ describe("Dummy Api employee API", async ()=>{
     expect(createEmpResponse).to.have.property('status').to.be.a('string')
   })
 
-  it.skip("Dummy Api Update Employee (PUT: /update/${empId})", async () =>{
+  it("Dummy Api Update Employee (PUT: /update/${empId})", async () =>{
     const empToBeCreated = {
       "name": `${Math.random().toString(36).slice(2)}`,
       "salary": `${Math.floor(Math.random() * 100000) + 1}`,
@@ -80,11 +76,33 @@ describe("Dummy Api employee API", async ()=>{
     expect(createEmpResponse).to.have.property('status').to.be.a('string')
 
     const empId = createEmpResponse.data.id
-    const updateEmpResponse = await api.updateEmp(empId)
+
+    const updatedEmpRecord = {
+      "name": `updateName`,
+      "salary": `100`,
+      "age": `10`
+    }
+
+    const updateEmpResponse = await api.updateEmp(updatedEmpRecord, empId)
+
+    expect(updateEmpResponse).to.have.property('status', 'success')
+    expect(updateEmpResponse).to.have.property('status').to.be.a('string')
+
+    expect(updateEmpResponse.data).to.have.property('name', updatedEmpRecord.name)
+    expect(updateEmpResponse.data).to.have.property('name').to.be.a('string')
+
+    expect(updateEmpResponse.data).to.have.property('salary', updatedEmpRecord.salary)
+    expect(updateEmpResponse.data).to.have.property('salary').to.be.a('string')
+
+    expect(updateEmpResponse.data).to.have.property('age', updatedEmpRecord.age)
+    expect(updateEmpResponse.data).to.have.property('age').to.be.a('string')
+
+    expect(updateEmpResponse).to.have.property('message', `Successfully! Record has been updated.`)
+    expect(updateEmpResponse).to.have.property('message').to.be.a('string')
 
   })
 
-  it("Dummy Api Delete By ID Employee (DELETE: /delete/${empId})", async () =>{
+  it("Dummy Api Delete Employee By ID  (DELETE: /delete/${empId})", async () =>{
     const empToBeCreated = {
       "name": `${Math.random().toString(36).slice(2)}`,
       "salary": `${Math.floor(Math.random() * 100000) + 1}`,
