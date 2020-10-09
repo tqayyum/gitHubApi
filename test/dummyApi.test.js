@@ -52,7 +52,7 @@ describe("Dummy Api employee API", async ()=>{
     expect(responseGetEmpId).to.have.property('message').to.be.a('string')
   })
 
-  it.("Dummy Api Create Employee (POST: /api/v1/create)", async ()=>{
+  it("Dummy Api Create Employee (POST: /api/v1/create)", async ()=>{
     const empToBeCreated = {
       "name": `${randomName}`,
       "salary": `${randomSalary}`,
