@@ -10,7 +10,7 @@ class Api {
       json: true,
       headers: {
         "Content-Type": 'application/json',
-        "User-Agent": 'Awesome-Octocat-App'
+        // "User-Agent": 'Awesome-Octocat-App'
       },
       rejectUnauthorized: false
     });

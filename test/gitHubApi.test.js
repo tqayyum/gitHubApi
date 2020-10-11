@@ -2,7 +2,7 @@ const Api = require('../src/gitHub-Api')
 const { expect } = require('chai');
 const guard = require('../src/guard')
 
-describe("GitHub User api", async () => {
+describe.skip("GitHub User api", async () => {
 
   let api;
 
