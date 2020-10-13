@@ -4,7 +4,7 @@ const randomName = ('../src/randomVar')
 const randomSalary = ('../src/randomVar')
 const randomAge = ('../src/randomVar')
 
-describe("Dummy Api employee API", async ()=>{
+describe.skip("Dummy Api employee API", async ()=>{
   let api
 
   before(async()=>{
